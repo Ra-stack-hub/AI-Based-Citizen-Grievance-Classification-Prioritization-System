@@ -1,0 +1,25 @@
+fastapi
+uvicorn[standard]
+motor
+pydantic
+pydantic[email]
+pydantic-settings
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+# AI/ML Dependencies
+transformers
+torch
+spacy
+nltk
+scikit-learn
+xgboost
+pandas
+numpy
+sentence-transformers
+# Other
+python-dotenv
+firebase-admin
+pytest
+requests
+pillow

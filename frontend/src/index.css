@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-textPrimary font-sans antialiased selection:bg-primary/30 selection:text-textPrimary;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/80 backdrop-blur-md border border-borderLight shadow-md;
+  }
+  
+  .glass-dark {
+    @apply bg-surfaceLight/80 backdrop-blur-xl border border-borderLight shadow-lg;
+  }
+}
