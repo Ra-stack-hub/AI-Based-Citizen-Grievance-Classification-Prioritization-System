@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { AlertTriangle, MapPin, Clock, Info } from 'lucide-react';
+import { BASE_URL } from '../services/api';
 
 const Dashboard = () => {
   const { token, isAuthenticated, user } = useAuth();
@@ -18,7 +19,7 @@ const Dashboard = () => {
 
     const fetchComplaints = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/v1/complaints/', {
+        const response = await fetch(`${BASE_URL}/complaints/`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

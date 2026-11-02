@@ -1,11 +1,11 @@
-const BASE_URL = 'http://localhost:8000/api/v1';
+export const BASE_URL = import.meta.env.VITE_API_URL || '/api/v1';
 
 export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
   const token = localStorage.getItem('token');
   
-  const headers: HeadersInit = {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
-    ...options.headers,
+    ...(options.headers as Record<string, string>),
   };
 
   if (token) {

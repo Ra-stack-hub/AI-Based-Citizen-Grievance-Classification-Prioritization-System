@@ -35,6 +35,10 @@ const Navbar = () => {
           
           <Link to="/track" className="text-textSecondary hover:text-textPrimary transition-colors">Track</Link>
           
+          {isAuthenticated && user?.role === 'citizen' && (
+            <Link to="/dashboard" className="text-textSecondary hover:text-textPrimary transition-colors">My Complaints</Link>
+          )}
+
           {isAuthenticated && user?.role === 'admin' && (
             <Link to="/admin" className="text-textSecondary hover:text-textPrimary transition-colors">
               Admin Dashboard
@@ -83,6 +87,10 @@ const Navbar = () => {
           
           <Link to="/track" onClick={() => setIsMobileMenuOpen(false)} className="text-textPrimary font-medium py-2">Track</Link>
           
+          {isAuthenticated && user?.role === 'citizen' && (
+            <Link to="/dashboard" onClick={() => setIsMobileMenuOpen(false)} className="text-textPrimary font-medium py-2">My Complaints</Link>
+          )}
+
           {isAuthenticated && user?.role === 'admin' && (
             <Link to="/admin" onClick={() => setIsMobileMenuOpen(false)} className="text-textPrimary font-medium py-2">
               Admin Dashboard

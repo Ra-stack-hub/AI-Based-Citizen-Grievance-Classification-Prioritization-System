@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Physical laptop Wi-Fi IP so your mobile phone can connect to the backend
-export const API_URL = 'http://192.168.29.10:8000/api/v1';
+export const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://10.205.115.53:8000/api/v1';
 
 interface User {
   id: string;

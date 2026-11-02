@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { AlertTriangle, MapPin, Clock, Check, RefreshCw } from 'lucide-react';
+import { BASE_URL } from '../../services/api';
 
 const ComplaintReview = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const ComplaintReview = () => {
 
     const fetchComplaint = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/v1/complaints/${id}`, {
+        const response = await fetch(`${BASE_URL}/complaints/${id}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {
@@ -46,7 +47,7 @@ const ComplaintReview = () => {
     
     setUpdating(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/complaints/${id}/status`, {
+      const response = await fetch(`${BASE_URL}/complaints/${id}/status`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

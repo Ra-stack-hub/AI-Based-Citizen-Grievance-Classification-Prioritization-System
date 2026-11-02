@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { User, Mail, Lock, ArrowRight } from 'lucide-react';
+import { BASE_URL } from '../services/api';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -16,7 +17,7 @@ const Register = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/auth/register', {
+      const response = await fetch(`${BASE_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

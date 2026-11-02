@@ -3,6 +3,7 @@ import { MapPin, Map, Camera, Upload, Mic, Check, AlertTriangle, X } from 'lucid
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../services/api';
 
 const SubmitComplaint = () => {
   const [title, setTitle] = useState('');
@@ -137,7 +138,7 @@ const SubmitComplaint = () => {
     if (title && description) {
       setIsSubmitting(true);
       try {
-        const response = await fetch('http://localhost:8000/api/v1/complaints/', {
+        const response = await fetch(`${BASE_URL}/complaints/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Bot, X, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BASE_URL } from '../../services/api';
 
 const CitizenChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const CitizenChatbot = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://localhost:8000/api/v1/chat/citizen', {
+      const response = await fetch(`${BASE_URL}/chat/citizen`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

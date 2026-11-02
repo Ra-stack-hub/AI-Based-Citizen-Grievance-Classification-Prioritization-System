@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Search, CheckCircle2, Circle } from 'lucide-react';
+import { BASE_URL } from '../services/api';
 
 const Track = () => {
   const [search, setSearch] = useState('');
@@ -8,7 +9,7 @@ const Track = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/api/v1/complaints/public', {
+    fetch(`${BASE_URL}/complaints/public`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

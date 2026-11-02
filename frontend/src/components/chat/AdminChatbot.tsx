@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Database, X, Send, BarChart3 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BASE_URL } from '../../services/api';
 
 const AdminChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const AdminChatbot = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://localhost:8000/api/v1/chat/admin', {
+      const response = await fetch(`${BASE_URL}/chat/admin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

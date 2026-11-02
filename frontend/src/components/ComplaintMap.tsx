@@ -2,6 +2,7 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { BASE_URL } from '../services/api';
 
 // Fix leaflet default icon issue in React
 // @ts-ignore
@@ -25,7 +26,7 @@ const ComplaintMap = () => {
     const fetchHotspots = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:8000/api/v1/analytics/hotspots', {
+        const res = await fetch(`${BASE_URL}/analytics/hotspots`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) {

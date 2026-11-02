@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { Layers, AlertTriangle, Clock, CheckCircle2 } from 'lucide-react';
+import { BASE_URL } from '../services/api';
 
 const lineData = [
   { name: 'Mon', filed: 40, resolved: 24 },
@@ -45,7 +46,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/api/v1/complaints/all', {
+    fetch(`${BASE_URL}/complaints/all`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

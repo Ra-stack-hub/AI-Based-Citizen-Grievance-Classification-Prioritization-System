@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Bot, User, Camera, Mic, ChevronDown, CheckCircle2, AlertTriangle, Paperclip } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BASE_URL } from '../../services/api';
 
 type Action = {
   label: string;
@@ -92,7 +93,7 @@ const FloatingChatbot = () => {
     try {
       const token = localStorage.getItem('token') || '';
       
-      const response = await fetch('http://localhost:8000/api/v1/chat/message', {
+      const response = await fetch(`${BASE_URL}/chat/message`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

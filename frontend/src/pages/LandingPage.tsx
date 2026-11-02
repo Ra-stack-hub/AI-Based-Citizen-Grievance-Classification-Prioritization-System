@@ -101,7 +101,7 @@ const LandingPage = () => {
                       className="bg-surfaceLight border border-borderLight rounded-xl p-4 hover:bg-surfaceLight/50 transition-colors cursor-pointer"
                     >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs text-textSecondary font-mono">{(ticket._id || ticket.id)?.substring(0,8)}</span>
+                      <span className="text-xs text-textSecondary font-mono">{ticket.id.substring(0,8)}</span>
                       <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
                         ticket.priority === 'Critical' ? 'bg-danger/10 text-danger border border-danger/20' :
                         ticket.priority === 'High' ? 'bg-warning/10 text-warning border border-warning/20' :

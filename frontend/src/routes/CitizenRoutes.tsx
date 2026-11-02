@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import CitizenLayout from '../components/layout/CitizenLayout';
-import CitizenDashboard from '../pages/citizen/CitizenDashboard';
-import ReportIssue from '../pages/citizen/ReportIssue';
-import ComplaintHistory from '../pages/citizen/ComplaintHistory';
+import CitizenDashboard from '../pages/Citizen/CitizenDashboard';
+import ReportIssue from '../pages/Citizen/ReportIssue';
+import ComplaintHistory from '../pages/Citizen/ComplaintHistory';
 
 const CitizenRoutes = () => {
   return (
