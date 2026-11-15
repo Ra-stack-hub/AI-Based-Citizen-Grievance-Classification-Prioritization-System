@@ -26,8 +26,6 @@ An intelligent, multi-platform Smart City grievance management platform that lev
   - [3. Mobile App Setup](#3-mobile-app-setup)
 - [Environment Configuration](#-environment-configuration)
 - [API Documentation](#-api-documentation)
-- [Troubleshooting Common Issues](#-troubleshooting-common-issues)
-- [License](#-license)
 
 ---
 
@@ -303,27 +301,4 @@ Once the backend is running, explore all endpoints interactively at `http://loca
 | `PATCH`| `/api/v1/complaints/{id}/status` | Update resolution status & assign officer |
 | `GET` | `/api/v1/analytics/hotspots` | Fetch geolocated grievance clusters for GIS map |
 | `POST` | `/api/v1/chat/message` | Query the RAG-assisted grievance AI chatbot |
-
----
-
-## ❓ Troubleshooting Common Issues
-
-### 1. `en_core_web_sm` SSL Certificate Error
-If downloading the spaCy language model fails with an SSL/certificate error on Windows or behind firewalls:
-```bash
-pip install --upgrade certifi
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl --trusted-host github.com --trusted-host objects.githubusercontent.com
-```
-
-### 2. Mobile App "Network Request Failed" / Cannot Connect
-- **Check Backend**: Verify the backend is actively running (`python run.py`) and listening on `0.0.0.0:8000`.
-- **Same Wi-Fi**: Verify that both your phone and laptop are connected to the exact same Wi-Fi router or hotspot (not on mobile data).
-- **IP Mismatch**: Verify the IP in `mobile/src/context/AuthContext.tsx` matches the current IPv4 address displayed by `ipconfig`.
-- **Windows Firewall**: If Windows Firewall blocks incoming port 8000 requests, allow Python / port 8000 in Windows Defender Firewall settings.
-
----
-
-## 📜 License
-
-This project is developed for educational and research purposes as part of the Major Project curriculum. All rights reserved.
 
