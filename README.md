@@ -26,6 +26,7 @@ An intelligent, multi-platform Smart City grievance management platform that lev
   - [3. Mobile App Setup](#3-mobile-app-setup)
 - [Environment Configuration](#-environment-configuration)
 - [API Documentation](#-api-documentation)
+- [Project Demo Video](#-project-demo-video)
 
 ---
 
@@ -301,4 +302,13 @@ Once the backend is running, explore all endpoints interactively at `http://loca
 | `PATCH`| `/api/v1/complaints/{id}/status` | Update resolution status & assign officer |
 | `GET` | `/api/v1/analytics/hotspots` | Fetch geolocated grievance clusters for GIS map |
 | `POST` | `/api/v1/chat/message` | Query the RAG-assisted grievance AI chatbot |
+
+---
+
+## 🎥 Project Demo Video
+
+Watch the complete live walkthrough demonstrating citizen grievance registration, real-time AI classification & urgency scoring, GIS hotspot map, and the officer resolution workflow:
+
+📺 **[Click here to watch the Project Demo Video](https://drive.google.com/file/d/1JgdQh5eSx2mf-BV9qrF3m1i1wGnvkR1m/view?usp=sharing)**
+
 

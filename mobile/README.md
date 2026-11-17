@@ -135,3 +135,11 @@ eas login
 eas build --platform android --profile preview
 ```
 Once the build completes on the cloud, a direct download link for the `.apk` file will be provided.
+
+---
+
+## 🎥 Project Demo Video
+
+Watch the complete demonstration video of the project:  
+📺 **[Click here to watch the Project Demo Video](https://drive.google.com/file/d/1JgdQh5eSx2mf-BV9qrF3m1i1wGnvkR1m/view?usp=sharing)**
+
